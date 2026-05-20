@@ -1,0 +1,21 @@
+doctype: "State"
+quick_entry: true
+title_field: "state_name"
+
+tab_0:
+  name: "State Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "State Name"
+        name: "state_name"
+        type: "Data (name)"
+        reqd: true
+
+      field_1:
+        label: "State Code"
+        name: "state_code"
+        type: "Int"
+        reqd: true
+        unique: true

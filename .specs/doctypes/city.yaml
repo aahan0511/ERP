@@ -1,0 +1,14 @@
+doctype: "City"
+quick_entry: true
+title_field: "city"
+
+tab_0:
+  name: "City Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "City Name"
+        name: "city"
+        type: "Data (name)"
+        reqd: true

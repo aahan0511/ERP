@@ -1,0 +1,60 @@
+doctype: "Agent"
+title_field: "agent_name"
+
+tab_0:
+  name: "Agent Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Name"
+        name: "agent_name"
+        type: "Data (name)"
+        reqd: true
+
+      field_1:
+        label: "Address"
+        name: "address"
+        type: "Text"
+
+      field_2:
+        label: "City"
+        name: "city"
+        type: "Link"
+        link: "City : city"
+
+      field_3:
+        label: "State Code"
+        name: "state_code"
+        type: "Link"
+        link: "State : state_code"
+        note: "When either state code or state name are filled, both of them should be filled looking at the data from the State doctype"
+        claude_note: "Make state_name the Link field (options: State). Make state_code an Int (no fetch_from). In agent.py validate(): if state_name set and state_code empty, get_value(state_code from state_name); elif state_code set and state_name empty, get_list(State, filters={state_code:...}). In agent.js: state_name trigger → db.get_value → set state_code; state_code trigger → db.get_list → set state_name if empty."
+
+      field_4:
+        label: "State Name"
+        name: "state_name"
+        type: "Link"
+        link: "State : state_name"
+        note: "When either state name or state code are filled, both of them should be filled looking at the data from the State doctype"
+        claude_note: "See field_3 claude_note."
+
+      field_5:
+        label: "Phone"
+        name: "phone_1"
+        type: "Data (phone)"
+
+      field_6:
+        label: "Mobile"
+        name: "phone_2"
+        type: "Data (phone)"
+
+      field_7:
+        label: "Email"
+        name: "email"
+        type: "Data (email)"
+
+      field_8:
+        label: "Commission (%)"
+        name: "commission"
+        type: "Percent"

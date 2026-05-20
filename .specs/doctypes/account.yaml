@@ -1,0 +1,287 @@
+doctype: Account
+title_field: "account_name"
+
+tab_0:
+  name: "Account Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Name"
+        name: "account_name"
+        type: "Data (name)"
+        reqd: true
+
+      field_1:
+        label: "Head Name"
+        name: "head_name"
+        type: "Link"
+        link: "Account Head : head_name"
+        reqd: true
+
+    column_1:
+      field_0: 
+        label: "S. Head Name"
+        name: "super_head_name"
+        type: "Link"
+        link: "Account Super Head : super_head_name"
+        fetch_from: "Account Head : super_head_name"
+        reqd: true
+
+  section_1:
+    column_0:
+      field_0:
+        label: "Address"
+        name: "address"
+        type: "Text"
+      
+      field_1:
+        label: "City"
+        name: "city"
+        type: "Link"
+        link: "City : city"
+
+      field_2:
+        label: "Pin Code"
+        name: "pin"
+        type: "Int"
+
+      field_3:
+        label: "State Code"
+        name: "state_code"
+        type: "Link"
+        link: "State : state_code"
+        note: "When either state code or state name are filled, both of them should be filled looking at the data from the State doctype"
+        claude_note: "Make state_name the Link field (options: State). Make state_code an Int (no fetch_from). In agent.py validate(): if state_name set and state_code empty, get_value(state_code from state_name); elif state_code set and state_name empty, get_list(State, filters={state_code:...}). In agent.js: state_name trigger → db.get_value → set state_code; state_code trigger → db.get_list → set state_name if empty."
+
+      field_4:
+        label: "State Name"
+        name: "state_name"
+        type: "Link"
+        link: "State : state_name"
+        note: "When either state name or state code are filled, both of them should be filled looking at the data from the State doctype"
+        claude_note: "See field_3 claude_note."
+
+    column_1:
+      field_0:
+        label: "Agent"
+        name: "agent"
+        type: "Link"
+        link: "Agent : agent_name"
+        reqd: true
+
+      field_1:
+        label: "Salesman"
+        name: "salesman"
+        type: "Link"
+        link: "Salesman : salesman_name"
+
+      field_2:
+        label: "Remark"
+        name: "remark"
+        type: "Text"
+
+  section_2:
+    column_0:
+      field_0:
+        label: "Contact Person"
+        name: "contact_person"
+        type: "Data (name)"
+
+      field_1:
+        label: "Phone"
+        name: "phone_1"
+        type: "Data (phone)"
+
+      field_2:
+        label: "Mobile"
+        name: "phone_2"
+        type: "Data (phone)"
+
+      field_3:
+        label: "Email"
+        name: "email"
+        type: "Data (email)"
+      
+      field_4:
+        label: "Website"
+        name: "website"
+        type: "Data (url)"
+
+tab_1:
+  name: "Details"
+
+  fold_0:
+    name: "Tax Details"
+
+    field_0:
+      label: "PAN No."
+      name: "pan"
+      type: "Data"
+
+    field_1:
+      label: "GST No."
+      name: "gst"
+      type: "Data"
+
+    field_2:
+      label: "TAN No."
+      name: "tan"
+      type: "Data"
+
+    field_3:
+      label: "MSME No."
+      name: "msme"
+      type: "Data"
+
+    field_4:
+      label: "TIN No."
+      name: "tin"
+      type: "Data"
+
+    field_5:
+      label: "A/C Type"
+      name: "ac"
+      type: "Select"
+      options:
+        - "Registered"
+        - "Un-Registered"
+        - "Composit Scheme"
+        - "Exporter / Importer"
+        - "H: UIN Holder"
+        - "ISD: Input Service Distributor"
+          
+    field_6:
+      label: "Type"
+      name: "type"
+      type: "Select"
+      options:
+        - "None"
+        - "Micro"
+        - "Medium"
+        - "Small"
+        - "Large"
+      
+    field_7:
+      label: "CST No."
+      name: "cst"
+      type: "Data"
+
+  fold_1:
+    name: "Other Details"
+
+    column_0:
+      field_0:
+        label: "Lock this account"
+        name: "lock"
+        type: "Checkbox"
+        note: "When this is on, the account cannot be changed."
+
+      field_1:
+        label: "Is Company"
+        name: "is_company"
+        type: "Checkbox"
+
+      field_2:
+        label: "Infra Company"
+        name: "infra_company"
+        type: "Checkbox"
+
+      field_3:
+        label: "Apply TCS"
+        name: "tcs"
+        type: "Checkbox"
+
+      field_4:
+        label: "On Line Account Final"
+        name: "on_line_account_final"
+        type: "Checkbox"
+
+      field_5:
+        label: "Transport"
+        name: "transport"
+        type: "Link"
+        link: "Transport : transport_name"
+
+      field_6:
+        label: "Distance KM"
+        name: "distance"
+        type: "Float"
+        precision: 2
+
+      field_7:
+        label: "Lock for Billing if Dues Pending Days Exceed"
+        name: "billing_lock"
+        type: "Checkbox"
+
+    column_1:
+      field_0:
+        label: "Interest Dr..."
+        name: "interest"
+        type: "Int"
+
+      field_1:
+        label: "Discount (%)"
+        name: "discount"
+        type: "Percent"
+
+      field_2:
+        label: "Dalali (%)"
+        name: "dalali"
+        type: "Percent"
+
+      field_3:
+        label: "Due Days"
+        name: "due_days"
+        type: "Int"
+        
+      field_5:
+        label: "T.D.S. (%)"
+        name: "tds"
+        type: "Percent"
+        
+      field_6:
+        label: "Credit Limit"
+        name: "credit"
+        type: "Int"
+        
+      field_7:
+        label: "Disp To"
+        name: "disp"
+        type: "Data"
+        
+      field_8:
+        label: "Bales"
+        name: "bales"
+        type: "Int"
+  
+  fold_2:
+    name: "Bank Details"
+
+    field_0:
+      label: "Account No."
+      name: "acc_no"
+      type: "Data"
+
+    field_1:
+      label: "Bank Name"
+      name: "bank_name"
+      type: "Data"
+
+    field_2:
+      label: "Branch Name"
+      name: "bank_branch"
+      type: "Data"
+
+  fold_3:
+    name: "Address"
+
+    field_0:
+      label: "Delivery Address 1"
+      name: "del_address_1"
+      type: "Text"
+
+    field_1:
+      label: "Delivery Address 2"
+      name: "del_address_2"
+      type: "Text"

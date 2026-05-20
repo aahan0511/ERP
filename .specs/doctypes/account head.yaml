@@ -1,0 +1,21 @@
+doctype: "Account Head"
+quick_entry: true
+title_field: "head_name"
+
+tab_0:
+  name: "Account Head Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Head Name"
+        name: "head_name"
+        type: "Data"
+        reqd: true
+
+      field_1:
+        label: "Super Head Name"
+        name: "super_head_name"
+        type: "Link"
+        link: "Account Super Head : super_head_name"
+        reqd: true

@@ -1,0 +1,30 @@
+doctype: "Transport"
+quick_entry: true
+title_field: "transport_name"
+
+tab_0:
+  name: "Transport Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Name"
+        name: "transport_name"
+        type: "Data (name)"
+        reqd: true
+
+      field_1:
+        label: "Transport ID"
+        name: "transport_id"
+        type: "Data"
+        reqd: true
+
+      field_2:
+        label: "Address"
+        name: "address"
+        type: "Text"
+
+      field_3:
+        label: "Phone"
+        name: "phone"
+        type: "Data (phone)"

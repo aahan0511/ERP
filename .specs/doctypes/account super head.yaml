@@ -1,0 +1,24 @@
+doctype: "Account Super Head"
+quick_entry: true
+title_field: "super_head_name"
+
+tab_0:
+  name: "Account Super Head Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Super Head Name"
+        name: "super_head_name"
+        type: "Data"
+        reqd: true
+
+      field_1:
+        label: "Under Type"
+        name: "super_head_type"
+        type: "Select"
+        reqd: true
+        options: 
+          - "Trading Account"
+          - "Profit & Loss Account"
+          - "Balance Sheet"

@@ -1,0 +1,23 @@
+I have put all the DocTypes you need to create in `./specs/doctypes/`
+You have to figure out the missing details like `module` on your own.
+
+Keep everything specified as it is.
+Maintain the arrangement and format.
+
+Map the datatype with the closest Frappe datatype, if the datatype provided feels off.
+
+I have added a `note` section in some fields. They are some special requests which I do not know how to express as yaml. Please understand them and map them to Frappe, they might handle automation, fetching, etc.
+
+If you have any doubts, ask me before proceeding.
+
+---
+
+Before making any DocType check if one already exists, and if one exists check if it is up to date. If it is outdated, delete it and recreate the new one.
+This ERP is in dev so deleting a DocType doesn't cause harm. But note that when a DocType can be edited to mark the new changes, edit it instead of deleting it.
+
+Whenever you make a DocType, commit it to git. And to check if any DocType has changed, you can just do git status to get all the new DocTypes.
+Also add the DocType spec of the respective DocTypes to git.
+
+---
+
+Note: Whenever you do something which is not obvious, add a new `claude_note` under the respective field to keep consistency. Keep it short, but yet enough for it to be reproducible.

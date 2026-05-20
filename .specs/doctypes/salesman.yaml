@@ -1,0 +1,54 @@
+doctype: "Salesman"
+title_field: "salesman_name"
+
+tab_0:
+  name: "Salesman Master"
+
+  section_0:
+    column_0:
+      field_0:
+        label: "Name"
+        name: "salesman_name"
+        type: "Data (name)"
+        reqd: true
+
+      field_1:
+        label: "Address"
+        name: "address"
+        type: "Text"
+
+      field_2:
+        label: "Mobile"
+        name: "phone"
+        type: "Data (phone)"
+
+      field_3:
+        label: "Email"
+        name: "email"
+        type: "Data (email)"
+
+      field_4:
+        label: "Commission (%)"
+        name: "commission"
+        type: "Percent"
+
+      field_5:
+        label: "PAN"
+        name: "pan"
+        type: "Data"
+
+      field_6:
+        label: "Remark"
+        name: "remark"
+        type: "Text"
+
+      field_7:
+        label: "Ref By"
+        name: "ref"
+        type: "Data (name)"
+
+      field_8:
+        label: "Lock Salesman"
+        name: "lock"
+        type: "Checkbox"
+        note: "When this is on, the salesman cannot be changed."
