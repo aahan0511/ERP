@@ -122,7 +122,8 @@
    "fieldname": "state_name",
    "fieldtype": "Link",
    "label": "State Name",
-   "options": "State"
+   "options": "State",
+   "claude_note": "Triggers JS on change: uses frappe.db.get_value callback form (not .then()) to fill state_code. Callback form used because .then({ message }) resolution is ambiguous across Frappe versions — r.state_code is always reliable."
   },
   {
    "fieldname": "state_code",
