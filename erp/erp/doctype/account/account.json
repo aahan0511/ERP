@@ -1,0 +1,398 @@
+{
+ "actions": [],
+ "autoname": "field:account_name",
+ "creation": "2026-05-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "account_master_tab",
+  "sb_account_0",
+  "account_name",
+  "head_name",
+  "cb_account_0",
+  "super_head_name",
+  "sb_account_1",
+  "address",
+  "city",
+  "pin",
+  "state_name",
+  "state_code",
+  "cb_account_1",
+  "agent",
+  "salesman",
+  "remark",
+  "sb_account_2",
+  "contact_person",
+  "phone_1",
+  "phone_2",
+  "email",
+  "website",
+  "details_tab",
+  "sb_tax_details",
+  "pan",
+  "gst",
+  "tan",
+  "msme",
+  "tin",
+  "ac",
+  "type",
+  "cst",
+  "sb_other_details",
+  "lock",
+  "is_company",
+  "infra_company",
+  "tcs",
+  "on_line_account_final",
+  "transport",
+  "distance",
+  "billing_lock",
+  "cb_other_details",
+  "interest",
+  "discount",
+  "dalali",
+  "due_days",
+  "tds",
+  "credit",
+  "disp",
+  "bales",
+  "sb_bank_details",
+  "acc_no",
+  "bank_name",
+  "bank_branch",
+  "sb_address_details",
+  "del_address_1",
+  "del_address_2"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_master_tab",
+   "fieldtype": "Tab Break",
+   "label": "Account Master"
+  },
+  {
+   "fieldname": "sb_account_0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "head_name",
+   "fieldtype": "Link",
+   "label": "Head Name",
+   "options": "Account Head",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cb_account_0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "super_head_name",
+   "fieldtype": "Link",
+   "label": "S. Head Name",
+   "options": "Account Super Head",
+   "fetch_from": "head_name.super_head_name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sb_account_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "pin",
+   "fieldtype": "Int",
+   "label": "Pin Code"
+  },
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "label": "State Name",
+   "options": "State"
+  },
+  {
+   "fieldname": "state_code",
+   "fieldtype": "Int",
+   "label": "State Code",
+   "claude_note": "Auto-filled from state_name via JS/Python. If state_name set and state_code empty, fetches state_code from State doctype. If state_code set and state_name empty, reverse-looks up state_name."
+  },
+  {
+   "fieldname": "cb_account_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "Agent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salesman",
+   "fieldtype": "Link",
+   "label": "Salesman",
+   "options": "Salesman"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "sb_account_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Data",
+   "label": "Contact Person"
+  },
+  {
+   "fieldname": "phone_1",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "phone_2",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
+  },
+  {
+   "fieldname": "details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "sb_tax_details",
+   "fieldtype": "Section Break",
+   "label": "Tax Details",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN No."
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Data",
+   "label": "GST No."
+  },
+  {
+   "fieldname": "tan",
+   "fieldtype": "Data",
+   "label": "TAN No."
+  },
+  {
+   "fieldname": "msme",
+   "fieldtype": "Data",
+   "label": "MSME No."
+  },
+  {
+   "fieldname": "tin",
+   "fieldtype": "Data",
+   "label": "TIN No."
+  },
+  {
+   "fieldname": "ac",
+   "fieldtype": "Select",
+   "label": "A/C Type",
+   "options": "Registered\nUn-Registered\nComposit Scheme\nExporter / Importer\nH: UIN Holder\nISD: Input Service Distributor"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "None\nMicro\nMedium\nSmall\nLarge"
+  },
+  {
+   "fieldname": "cst",
+   "fieldtype": "Data",
+   "label": "CST No."
+  },
+  {
+   "fieldname": "sb_other_details",
+   "fieldtype": "Section Break",
+   "label": "Other Details",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "lock",
+   "fieldtype": "Check",
+   "label": "Lock this account",
+   "claude_note": "When checked, validate() throws if old doc had lock=1, preventing any modification."
+  },
+  {
+   "fieldname": "is_company",
+   "fieldtype": "Check",
+   "label": "Is Company"
+  },
+  {
+   "fieldname": "infra_company",
+   "fieldtype": "Check",
+   "label": "Infra Company"
+  },
+  {
+   "fieldname": "tcs",
+   "fieldtype": "Check",
+   "label": "Apply TCS"
+  },
+  {
+   "fieldname": "on_line_account_final",
+   "fieldtype": "Check",
+   "label": "On Line Account Final"
+  },
+  {
+   "fieldname": "transport",
+   "fieldtype": "Link",
+   "label": "Transport",
+   "options": "Transport"
+  },
+  {
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "label": "Distance KM",
+   "precision": "2"
+  },
+  {
+   "fieldname": "billing_lock",
+   "fieldtype": "Check",
+   "label": "Lock for Billing if Dues Pending Days Exceed"
+  },
+  {
+   "fieldname": "cb_other_details",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "interest",
+   "fieldtype": "Int",
+   "label": "Interest Dr..."
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "Discount (%)"
+  },
+  {
+   "fieldname": "dalali",
+   "fieldtype": "Percent",
+   "label": "Dalali (%)"
+  },
+  {
+   "fieldname": "due_days",
+   "fieldtype": "Int",
+   "label": "Due Days"
+  },
+  {
+   "fieldname": "tds",
+   "fieldtype": "Percent",
+   "label": "T.D.S. (%)"
+  },
+  {
+   "fieldname": "credit",
+   "fieldtype": "Int",
+   "label": "Credit Limit"
+  },
+  {
+   "fieldname": "disp",
+   "fieldtype": "Data",
+   "label": "Disp To"
+  },
+  {
+   "fieldname": "bales",
+   "fieldtype": "Int",
+   "label": "Bales"
+  },
+  {
+   "fieldname": "sb_bank_details",
+   "fieldtype": "Section Break",
+   "label": "Bank Details",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "acc_no",
+   "fieldtype": "Data",
+   "label": "Account No."
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "fieldname": "sb_address_details",
+   "fieldtype": "Section Break",
+   "label": "Address",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "del_address_1",
+   "fieldtype": "Text",
+   "label": "Delivery Address 1"
+  },
+  {
+   "fieldname": "del_address_2",
+   "fieldtype": "Text",
+   "label": "Delivery Address 2"
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "erp",
+ "name": "Account",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "account_name",
+ "track_changes": 1
+}

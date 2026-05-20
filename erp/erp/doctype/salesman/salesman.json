@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "autoname": "field:salesman_name",
+ "creation": "2026-05-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "salesman_master_tab",
+  "sb_salesman_master",
+  "salesman_name",
+  "address",
+  "phone",
+  "email",
+  "commission",
+  "pan",
+  "remark",
+  "ref",
+  "lock"
+ ],
+ "fields": [
+  {
+   "fieldname": "salesman_master_tab",
+   "fieldtype": "Tab Break",
+   "label": "Salesman Master"
+  },
+  {
+   "fieldname": "sb_salesman_master",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "salesman_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Percent",
+   "label": "Commission (%)"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Text",
+   "label": "Remark"
+  },
+  {
+   "fieldname": "ref",
+   "fieldtype": "Data",
+   "label": "Ref By"
+  },
+  {
+   "fieldname": "lock",
+   "fieldtype": "Check",
+   "label": "Lock Salesman",
+   "claude_note": "When checked, validate() throws if old doc had lock=1, preventing any modification."
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "erp",
+ "name": "Salesman",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "salesman_name",
+ "track_changes": 1
+}

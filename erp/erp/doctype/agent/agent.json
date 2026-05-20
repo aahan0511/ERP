@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "autoname": "field:agent_name",
+ "creation": "2026-05-20 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_master_tab",
+  "sb_agent_master",
+  "agent_name",
+  "address",
+  "city",
+  "state_name",
+  "state_code",
+  "phone_1",
+  "phone_2",
+  "email",
+  "commission"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_master_tab",
+   "fieldtype": "Tab Break",
+   "label": "Agent Master"
+  },
+  {
+   "fieldname": "sb_agent_master",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "state_name",
+   "fieldtype": "Link",
+   "label": "State Name",
+   "options": "State"
+  },
+  {
+   "fieldname": "state_code",
+   "fieldtype": "Int",
+   "label": "State Code",
+   "claude_note": "Auto-filled from state_name via JS/Python. If state_name set and state_code empty, fetches state_code from State doctype. If state_code set and state_name empty, reverse-looks up state_name."
+  },
+  {
+   "fieldname": "phone_1",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "phone_2",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Percent",
+   "label": "Commission (%)"
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-20 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "erp",
+ "name": "Agent",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "agent_name",
+ "track_changes": 1
+}
