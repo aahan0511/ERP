@@ -21,3 +21,8 @@ Also add the DocType spec of the respective DocTypes to git.
 ---
 
 Note: Whenever you do something which is not obvious, add a new `claude_note` under the respective field to keep consistency. Keep it short, but yet enough for it to be reproducible.
+
+---
+
+At the end, run `bench migrate`.
+My site is `erp.localhost`.
